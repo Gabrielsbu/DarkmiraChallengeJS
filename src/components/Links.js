@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { db } from '../firebase';
+import { db } from '../services/firebase';
+
 import LinkForm from './LinkForm';
 
 
