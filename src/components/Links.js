@@ -24,9 +24,7 @@ const Links = () => {
                    await db.collection('ofertas').doc(idUsando).update(linkObject)
                 }
     
-                setidUsando('');
-           
-            
+                setidUsando('');    
     }
 
      const getOfertas = async () => {
