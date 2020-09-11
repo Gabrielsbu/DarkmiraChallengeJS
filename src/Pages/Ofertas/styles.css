@@ -1,0 +1,20 @@
+.ContainerCard{
+    background: var(--color-header);
+    display: flex;
+    flex-direction: column;
+}
+
+.Banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 0 50px 0;
+    
+}
+
+.ContentCard {
+    display: flex;
+    margin: 0 auto;
+
+}

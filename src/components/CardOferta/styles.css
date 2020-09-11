@@ -1,0 +1,22 @@
+.ContainerCard {
+    padding: 10px;
+  
+    
+}
+
+.Card {
+    width: 55%;
+    margin: 20px;
+    
+    
+}
+.Card img {
+    width: 50%;
+    
+}
+
+.Card p {
+    
+    font-weight: 700;
+    padding: 10px 10px;
+}

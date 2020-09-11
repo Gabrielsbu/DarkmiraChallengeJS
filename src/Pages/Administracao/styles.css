@@ -1,0 +1,99 @@
+
+.BannerAdmin{
+    padding: 150px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.Wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.BannerAdmin button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.ContentOfertas {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContentOfertas .Card {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+}
+
+.ContentOfertas .Card img {
+    
+    width: 100%;
+}
+
+
+.ContentOfertas .Card p {
+    
+    font-weight: 700;
+    padding: 10px 10px;
+}
+
+.ContentOfertas .Buttons {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+
+}
+
+
+
+.ContentOfertas .Buttons button:first-child{
+    
+    width: 120px;
+    height: 45px;
+    border-radius: 25px;
+    border: none;
+    background: var(--color-delete);
+    color: var(--color-header);
+    cursor: pointer;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.ContentOfertas .Buttons button:last-child{
+    
+    width: 120px;
+    height: 45px;
+    border-radius: 25px;
+    border: none;
+    background: var(--color-edit);
+    color: var(--color-header);
+    cursor: pointer;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+
+.ContentOfertas .Buttons button:hover{   
+    opacity: 0.8;   
+}
+

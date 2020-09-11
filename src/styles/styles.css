@@ -16,7 +16,8 @@
     --color-secondary: #E3AC1B;
     --color-tertiary: #F2D022;
     --color-quaternary: #2E3444;
-    --color-blue: #0061ff;
+    --color-delete: #F20732;
+    --color-edit: #F24405;
     --color-border: #bdc4c9;
     --color-footer:  #101316;
 }
