@@ -1,0 +1,68 @@
+.WrapperAdmin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContentAdmin {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.CardAdmin img {
+    width: 100%;
+    margin: 30px auto;
+}
+
+.ContentAdmin .CardAdmin button{
+    width: 30%;
+    height: 30px;
+    border: none;
+    background: var(--color-delete);
+    color: var(--color-header);
+    font-size: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.ContentAdmin .CardAdmin button:hover{
+    opacity: 0.8;
+}
+
+@media (min-width: 767px){
+
+    .WrapperAdmin{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    
+    .ContentAdmin {
+        width: 50%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .CardAdmin img {
+        width: 60%;
+        margin: 30px auto;
+    }
+    
+    .ContentAdmin .CardAdmin button{
+        width: 30%;
+        height: 50px;
+        border: none;
+        background: var(--color-delete);
+        color: var(--color-header);
+        font-size: 20px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    .ContentAdmin .CardAdmin button:hover{
+        opacity: 0.8;
+    }
+
+}
+

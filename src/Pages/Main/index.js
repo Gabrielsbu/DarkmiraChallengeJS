@@ -23,9 +23,7 @@ const Main = () => {
                     <p> O melhor atacado de toda a região, venha conhecer nossas ofertas, qualidade e melhor preço você encontra aqui na Best Motors </p>
                     <img src={CarroBody} alt="img-top-menu"/>
                     <Link to="/offers">
-                      <span>
                           Melhores ofertas
-                      </span>
                     </Link>
                   </div>
 

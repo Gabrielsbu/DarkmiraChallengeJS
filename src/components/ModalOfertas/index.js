@@ -1,15 +1,16 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import './styles.css'
+import { Modal, Button } from 'antd';
 
 import { db } from '../../services/firebase';
-
 import { Card } from 'antd';
-import ModalOfertas from '../ModalOfertas';
 
-const CardOferta = () => {
+import './styles.css';
+
+const ModalOfertas = () => {
   const [ofertas, setOfertas] = useState([]);
-  
+  const [visible, setVisible] = useState(false);
+
   const getOfertas = async () => {
     
     await db.collection('ofertas')
@@ -27,29 +28,24 @@ const CardOferta = () => {
         getOfertas();
     }, [])
 
-  //   const getLinkById = async (id) => {
-  //     const doc = await db.collection('ofertas').doc(id).get();
-  //     setValores({...doc.data()})
-  //  }
-
-  //  useEffect(() => {
-  //      if(props.idUsando === ''){
-  //          setValores({...iniciandoForm});
-  //      } else {
-  //          getLinkById(props.idUsando);
-  //      }
-  //  // eslint-disable-next-line react-hooks/exhaustive-deps
-  //  }, [props.idUsando]) 
-
   return (
     <>
-      <div className="WrapperOferta">
-
-            { ofertas.map( oferta => {
+      <Button type="primary" shape="round" onClick={() => setVisible(true)}>
+        Ver detalhadamente
+      </Button>
+      <Modal
+        title="Modal 1000px width"
+        centered
+        visible={visible}
+        onOk={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+        width={1000}
+      >
+        { ofertas.map( oferta => {
               return(
-                <div className="ContentOferta">
+                <div className="ContentOfertas">
                   <Card key={oferta.id}
-                  className="CardOferta" 
+                  className="Card" 
                   hoverable
                   
                   >
@@ -60,17 +56,15 @@ const CardOferta = () => {
                     <p>{oferta.marca}</p>
                     <p>{oferta.modelo}</p>
                     <p>{oferta.visualizacao}</p>
-              
-                  <ModalOfertas/>
                   </Card>
 
                 </div>
                   );  
             })}
             
-      </div>
+      </Modal>
     </>
-    )
+  );
 }
-  
-export default CardOferta;
+
+export default ModalOfertas;

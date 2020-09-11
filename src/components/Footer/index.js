@@ -8,11 +8,11 @@ const Footer = () => {
   return (
 
     <div className="ContainerFooter">
-        <div className="ContentFooter">
+
             <div className="TextFooter">
                 <p> Somos líderes em preços baixos e estamos pronto para recebê-los e mostrar o melhor catálogo de ofertas do mercado. </p>
             </div>
-        
+            
             <div className="SocialMidiaFooter">
                 <div className="ItemMidia">
                     <FacebookFilled />
@@ -26,33 +26,34 @@ const Footer = () => {
                     <TwitterCircleFilled />
                     <span>Twitter</span>
                 </div>
+
                 <div className="ItemMidia">
                     <BankFilled />
-                    <span>Mercado Livre</span>
+                    <span>Picpay</span>
                 </div>
 
             </div>
-           
-            <div className="SocialMidiaFooter">
-                <div className="ItemMidia">
+            
+            <div className="Menu">
+                <div className="ItemMenu">
                     <HomeOutlined />
                     <span>Início</span>
                 </div>
-                <div className="ItemMidia">
+                <div className="ItemMenu">
                     <HeartOutlined />
                     <span>Ofertas</span>
                 </div>
-                <div className="ItemMidia">
+                <div className="ItemMenu">
                     <UserOutlined />
                     <span>Administração</span>
                 </div>
-                <div className="ItemMidia">
+                <div className="ItemMenu">
                     <PhoneOutlined />
                     <span>Contato</span>
                 </div>
             </div>
 
-        </div>
+       
         
     </div>
      

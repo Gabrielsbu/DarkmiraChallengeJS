@@ -14,21 +14,18 @@ const Ofertas = () => {
       <>
           
       <Header />
-          <div className="ContainerCard">
 
-            <div className="Banner">
-              <h2>Ofertas com até 70 % de desconto</h2>
-            </div>
+      <div className="ContainerCard">
+
+        <div className="Banner">
+          <h2>Ofertas com até 70 % de desconto</h2>
+        </div>
             
-            <div className="ContentCard">
-                <CardOferta />
-                
-            </div>
-
-          </div>
+        <CardOferta />
+      </div>
           
-
-          <Footer />
+      <Footer />
+      
       </>
   );
 }

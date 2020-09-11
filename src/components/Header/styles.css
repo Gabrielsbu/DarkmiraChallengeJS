@@ -16,25 +16,38 @@ header {
     left: 0;
     position: fixed;
     background: var(--color-header);
-    
     display: flex;
     justify-content: space-between;
-
-    margin: 0 auto;
     padding: 30px 32px;
 }
 
-header div a {
-    display: none;
+header .namePage a {    
+   display: flex;
+   align-items: center;
+   width: 10%;
 }
 
-header a img {    
-    width: 13%;
+header .namePage a h1{    
+   display: none
+}
+    	
+
+header .namePage img {    
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
 }
     
-header h1 span {  
-    display: none;
+header .itemHeader {  
+    display: flex;
+    align-items: center;
 }
+
+header .itemHeader a{  
+    color: var(--color-quaternary)
+}
+
+
 
 header button {
     color: var(--text-color);
@@ -59,8 +72,24 @@ header button {
         background: var(--color-header);
     } 
 
+    header .namePage img {    
+        width: 60px;
+        height: 58px;
+        flex-shrink: 0;
+    }
+
     
-    
+    .namePage a{
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .namePage a h1{
+        margin: 25px 25px;
+        font-size: 30px;
+        
+    }
     
     header button {
         display: none;

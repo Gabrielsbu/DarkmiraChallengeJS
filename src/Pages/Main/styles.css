@@ -37,17 +37,17 @@
 }
 
 .textBody a {
-    text-decoration: none;
-            background: var(--color-footer);
-            color: var(--color-header);
-            outline: 0;
-            height: 4rem;
-            width: 90%;
-            border-radius: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
+        text-decoration: none;
+        background: var(--color-footer);
+        color: var(--color-header);
+        outline: 0;
+        height: 4rem;
+        width: 90%;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
 }
 
 .textBody a:hover{
@@ -65,9 +65,6 @@
     display: none;
 }
     
-
-
-
 .contentMid {
     display: flex;
     flex-direction: column;
@@ -112,12 +109,9 @@
         
     }
 
-    .ContentTop {
-        
+    .contentTop {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        
-       
     }
 
    
@@ -128,20 +122,26 @@
         padding: 0 50px;
         
     }
+
+    .textBody img{
+        display: none;
+    }
+
+    .textBody h2{
+        font-size: 35px;
+        color: var(--color-quaternary);
+        text-align: start   ;
+        font-weight: 500;
+    }
+
+   
     .textBody p {
         display: unset;
         color: var(--color-quaternary);
         font-size: 20px;
     }
 
-    
-
   
-
-    .textTopMenu img {
-        display: none;
-    } 
-
     .textTopMenu a {
         text-decoration: none;
         background: var(--color-footer);
@@ -207,8 +207,11 @@
 
 
 @media (min-width: 1024px){
-       
+    .contentTop{
+        height: 100vh;
+    }
     .contentMid {
         height: 100vh;
     }
 }
+

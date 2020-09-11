@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../services/firebase';
 
 import { Modal, Button  } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
 
 
-const ModalCreateOfertt = (props) => {
+const ModalEditOfertt = (props) => {
+    const [visible, setVisible] = useState(false);
 
-      const iniciandoForm = {
+    const iniciandoForm = {
         cor: '',
         marca:'',
         modelo:'',
@@ -17,23 +17,24 @@ const ModalCreateOfertt = (props) => {
         cidade: '',
         placa: '',
         fotos: [],
-        dataDeCadastro: '',
-        numerVisualizacoes: 0,
+        dataDeCadastro: ''
     };
 
     const [valores, setValores] = useState(iniciandoForm);
-    const [visible, setVisible] = useState(false);
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target; 
         setValores({...valores, [name]: value});
+       
     };
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         props.addOrEditLink(valores);
         setValores({...iniciandoForm});
-    
+        
     };
 
     const getLinkById = async (id) => {
@@ -41,25 +42,27 @@ const ModalCreateOfertt = (props) => {
         setValores({...doc.data()})
      }
 
+    
+ 
      useEffect(() => {
-        if(props.idUsando === ''){
-            setValores({...iniciandoForm});
-        } else {
-            getLinkById(props.idUsando);
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.idUsando]) 
+         if(props.idUsando === ''){
+             setValores({...iniciandoForm});
+         } else {
+             getLinkById(props.idUsando);
+         }
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+     }, [props.idUsando])  
 
     return (
         <>
             <Button type="primary" shape="round" onClick={() => setVisible(true)}>
-                    <PlusOutlined /> 
-                    <span>Cadastrar oferta</span>
+                    
+                    <span>Editar oferta</span>
             </Button>
 
             <div className="ContainerModal">
               <Modal
-                title="Cadastrar nova oferta"
+                title="Editar nova oferta"
                 centered
                 visible={visible}
                 onOk={() => setVisible(false)}
@@ -70,8 +73,7 @@ const ModalCreateOfertt = (props) => {
                 
             >
 
-                    <form onSubmit={handleSubmit}>
-                    <div>
+                <form onSubmit={handleSubmit}>
                         <input 
                         type="text" 
                         placeholder="Cor"
@@ -151,10 +153,8 @@ const ModalCreateOfertt = (props) => {
                         value={valores.fotos}
                         />
 
-                        <button onClick={() => setVisible(false)}>{props.idUsando === '' ? 'Cadastrar': 'Editar'}</button>
-                    </div>
-
-                    <hr/>
+                        <button >{props.idUsando === '' ? 'Cadastrar': 'Editar'}</button>
+                   
                 </form>
             
                 </Modal>
@@ -164,5 +164,5 @@ const ModalCreateOfertt = (props) => {
 
   }
 
-export default ModalCreateOfertt;
+export default ModalEditOfertt;
 
