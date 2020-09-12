@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../services/firebase';
 import './styles.css';
 import { Modal, Button  } from 'antd';
+
 import { PlusOutlined } from '@ant-design/icons';
 
 
@@ -144,9 +145,10 @@ const ModalCreateOfertt = (props) => {
                     onChange={handleInputChange}
                     value={valores.dataDeCadastro}
                     />
+                   
                     <input 
                     type="text" 
-                    placeholder="Fotos"
+                    placeholder="Colar o link de apenas uma imagem"
                     name="fotos" 
                     onChange={handleInputChange}
                     value={valores.fotos}

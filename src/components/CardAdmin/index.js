@@ -1,12 +1,14 @@
 import React, { useState , useEffect } from 'react';
-import './styles.css';
-import { message } from 'antd';
 import { db } from '../../services/firebase';
 
-import { Card } from 'antd';
+import './styles.css';
+import { message, Card } from 'antd';
+
 import ModalEditOfertt from '../ModalEditOfertt';
 
 const CardOferta = () => {
+
+  
   const [idUsando, setidUsando] = useState('');
   const [ofertas, setOfertas] = useState([]);
   
@@ -83,21 +85,22 @@ const CardOferta = () => {
               return(
                 <div className="ContentAdmin" key={oferta.id}>
                   <Card 
-                  className="CardAdmin" 
-                  hoverable
-                  
+                  className="CardAdmin"  
                   >
                     <img alt="example" src={oferta.fotos} />
 
-                    <p>{oferta.preco}</p>
-                    <p>{oferta.ano}</p>
-                    <p>{oferta.marca}</p>
-                    <p>{oferta.modelo}</p>
-                    <p>{oferta.visualizacao}</p>
+                    <p>Marca: {oferta.marca}</p>
+                    <p>Modelo: {oferta.modelo}</p>
+                    <p>KM/s rodados: {oferta.quilometragem} KM/s</p>
+                    <p>Ano: {oferta.ano}</p>
+                    <p>Valor: R$ {oferta.preco}</p>
+                    
 
                     <div className="ButtonsAdmin">
-                      <button onClick={() => setidUsando(oferta.id)}>Selecionar Edição</button>
-                      <ModalEditOfertt {...{addOrEditLink, idUsando, ofertas}}/>
+                      <div className="ButtonEdit" onClick={() => setidUsando(oferta.id)}>
+                        <ModalEditOfertt {...{addOrEditLink, idUsando, ofertas}}/>
+                      </div>
+                      
                       <button onClick={() => deletaOferta(oferta.id)}>Excluir Oferta</button>
                     </div>
 

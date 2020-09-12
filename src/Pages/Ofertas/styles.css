@@ -1,28 +1,18 @@
 
-.Banner {
+.ContainerBanner {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 150px 0 50px 0;
+    text-align: center;
 }
 
 
-.ContainerCard{
-    background: var(--color-header);
-    width: 100%;
-   
-}
-
-.Banner h2 {
+.ContainerBanner h2 {
     font-size: 35px;
 }
 
-.WrapperOferta{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 .ContentOferta {
     width: 100%;
@@ -39,28 +29,68 @@
     width: 100%;
 }
 
+.Link{
+    padding: 50px 0;
+    text-align: center;
+}
+
+.Link a {
+    font-size: 13px;
+    outline:0;
+    background: var(--color-quaternary);
+    color: var(--color-header);
+    padding: 25px;
+    border-radius: 50px;
+}
+
 @media (min-width: 767px){
 
-    .WrapperOferta{
-        display: flex;
-        flex-wrap: nowrap;
+    .ContentOfertts{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
+
     
-    .ContentOferta {
-        width: 50%;
-        text-align: center;
-        padding: 10px 0;
+    .CardOferta {
+       height: 80vh;
+       margin: 10px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        
     }
-    
+
     .CardOferta img {
-        width: 60%;
+        width: 80%;
         margin: 30px auto;
+    }
+
+    .CardOferta p {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 25px 0;
+        
     }
     
     .ContentOferta .CardOferta button{
         width: 70%;
     }
-    
-    
-}
 
+    .Link{
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    
+    .Link a {
+        font-size: 20px;
+        outline:0;
+        background: var(--color-quaternary);
+        color: var(--color-header);
+        padding: 25px;
+        border-radius: 50px;
+    }
+
+    
+
+}

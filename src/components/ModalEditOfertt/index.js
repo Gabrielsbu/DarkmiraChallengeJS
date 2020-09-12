@@ -55,7 +55,7 @@ const ModalEditOfertt = (props) => {
     return (
         <>
             <Button type="primary" shape="round" onClick={() => setVisible(true)}>
-                    <span>Informe o que Editar</span>
+                    <span>Editar oferta</span>
             </Button>
 
             <div className="ContainerModal">

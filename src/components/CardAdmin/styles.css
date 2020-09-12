@@ -16,6 +16,10 @@
     margin: 30px auto;
 }
 
+.CardAdmin p {
+    font-size: 25px;
+}
+
 .ButtonsAdmin {
     display: flex;
     flex-direction: column;
@@ -25,7 +29,7 @@
 
 .ButtonsAdmin button{
     margin: 20px 0;
-    width: 80%;
+    width: 70%;
     height: 2.5rem;
     border-radius: 25px;
     border: none;
@@ -33,14 +37,8 @@
     font-size: 15px;
 }
 
-.ButtonsAdmin button:first-child {
-    
-    background: #77BEA0;
-   
-}
-
-.ButtonsAdmin button + button {
-    background: var(--color-edit);
+.ButtonEdit{
+    width: 100%;
     
 }
 
