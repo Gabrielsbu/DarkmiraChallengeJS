@@ -13,14 +13,8 @@ const Administracao = () => {
 
     const [idUsando, setidUsando] = useState('');
 
-    const addOrEditLink = async (linkObject) => {
-         
-        if (idUsando === '') {
-            await db.collection('ofertas').doc().set(linkObject);
-        } else {
-           await db.collection('ofertas').doc(idUsando).update(linkObject)
-        }
-
+    const cadastrarOferta = async (linkObject) => {
+        await db.collection('ofertas').doc().set(linkObject);
         setidUsando('');    
     }
 
@@ -33,11 +27,11 @@ const Administracao = () => {
 
             <div className="BannerAdmin">
                 <h2>Bem vindo a central administrativa </h2>
-                <ModalCreateOfertt {...{addOrEditLink, idUsando}}/>
+                <ModalCreateOfertt {...{cadastrarOferta, idUsando}}/>
             </div>
-            
-            <CardAdmin />
+                <CardAdmin />
            
+
         </div>
       
       <Footer />

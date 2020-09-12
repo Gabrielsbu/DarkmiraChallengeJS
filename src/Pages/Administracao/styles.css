@@ -36,6 +36,14 @@
         text-align: center;
         padding: 200px 0 100px 0;
     }
+
+    .BannerAdmin button{
+        font-size: 25px;
+    }
+
+    .BannerAdmin h2{
+        font-size: 35px;
+    }
     
     .BannerAdmin button{
         text-align: center;

@@ -1,26 +1,14 @@
 import React, { useState , useEffect } from 'react';
 import './styles.css';
-
+import { message } from 'antd';
 import { db } from '../../services/firebase';
 
 import { Card } from 'antd';
-
 import ModalEditOfertt from '../ModalEditOfertt';
 
 const CardOferta = () => {
   const [idUsando, setidUsando] = useState('');
   const [ofertas, setOfertas] = useState([]);
-
-  const addOrEditLink = async (linkObject) => {
-         
-    if (idUsando === '') {
-        await db.collection('ofertas').doc().set(linkObject);
-    } else {
-       await db.collection('ofertas').doc(idUsando).update(linkObject)
-    }
-
-    setidUsando('');    
-  }
   
   const getOfertas = async () => {
     
@@ -40,9 +28,49 @@ const CardOferta = () => {
     }, [])
 
     const deletaOferta = async (id) => {
-      if( window.confirm('Você quer realmente excluir?') ){
+      if ( window.confirm('Você quer realmente excluir?')) 
+      {
           await db.collection('ofertas').doc(id).delete();
-          console.log('Oferta deletada')
+
+          message.success({
+            content: 'Oferta deletada com sucesso',
+            style:{
+                width: '100vw',
+                fontSize: '28px'
+                
+            },
+          }, 10);
+      }
+      
+    }
+ 
+    const addOrEditLink = async (linkObject) => {
+      try {
+          if (idUsando === '') {
+
+           try{
+             await db.collection('ofertas').doc().set(linkObject);
+            }
+             catch (error) {
+              message.success({
+                content: 'Ocorreu um erro na criação',
+                style:{
+                    width: '100%',
+                    fontSize: '28px'
+                    
+                },
+              }, 10);
+             }
+           
+           
+          } else {
+            await db.collection('ofertas').doc(idUsando).update(linkObject)
+            
+          }
+
+          setidUsando('');
+      } catch (error) {
+          console.log("erro", error)
       }
       
     }
@@ -53,8 +81,8 @@ const CardOferta = () => {
 
             { ofertas.map( oferta => {
               return(
-                <div className="ContentAdmin">
-                  <Card key={oferta.id}
+                <div className="ContentAdmin" key={oferta.id}>
+                  <Card 
                   className="CardAdmin" 
                   hoverable
                   
@@ -67,10 +95,12 @@ const CardOferta = () => {
                     <p>{oferta.modelo}</p>
                     <p>{oferta.visualizacao}</p>
 
-                    
+                    <div className="ButtonsAdmin">
+                      <button onClick={() => setidUsando(oferta.id)}>Selecionar Edição</button>
+                      <ModalEditOfertt {...{addOrEditLink, idUsando, ofertas}}/>
                       <button onClick={() => deletaOferta(oferta.id)}>Excluir Oferta</button>
-                      <ModalEditOfertt {...{addOrEditLink, idUsando, ofertas}} onClick={() => setidUsando(oferta.id)} />
-                   
+                    </div>
+
                   </Card>
 
                 </div>
