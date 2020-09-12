@@ -1,0 +1,59 @@
+
+.Banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 0 50px 0;
+    text-align: center;
+}
+
+
+.Banner h2 {
+    font-size: 35px;
+}
+
+
+.ContentOferta {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.CardOferta img {
+    width: 100%;
+    margin: 30px auto;
+}
+
+.ContentOferta .CardOferta button{
+    width: 100%;
+}
+
+@media (min-width: 767px){
+
+   
+    .ContainerOferta{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    
+    .CardOferta {
+        display: flex;
+        flex-direction: column;
+       height: 80vh;
+       margin: 10px;
+        
+    }
+
+    .CardOferta img {
+        width: 50%;
+        margin: 30px auto;
+    }
+    
+    .ContentOferta .CardOferta button{
+        width: 70%;
+    }
+
+    
+
+}

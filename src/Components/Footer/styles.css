@@ -1,0 +1,135 @@
+.ContainerFooter {
+    background: var(--color-footer);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 16px;
+    flex-shrink: 0;
+}  
+
+.TextFooter p {
+    display: none;
+}
+
+.SocialMidiaFooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+
+.SocialMidiaFooter .ItemMidia{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 15px 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    
+}
+
+
+.ItemMidia span {
+        display: inline;
+        
+        font-weight: bold;
+        color: var(--color-header);
+        
+}
+
+.Menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
+.Menu .ItemMenu{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 15px 10px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+
+
+.ItemMenu span {
+        font-weight: bold;
+        color: var(--color-header);
+        
+}
+
+.SocialMidiaFooter .ItemMidia span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   
+}
+
+.SocialMidiaFooter .ItemMidia span:first-child {
+    width: 30px
+}
+
+.Menu .ItemMenu span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.Menu .ItemMenu span:first-child {
+    width: 30px
+}
+
+@media (min-width: 767px) {
+
+    .ContainerFooter {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+    }  
+
+    .TextFooter  {
+        
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+
+        
+    }
+
+    .TextFooter p {
+        display: unset;
+        font-size: 23px;
+        color: var(--color-header);
+    
+    }
+
+    .SocialMidiaFooter .ItemMidia span {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 40%;
+    }
+
+    .SocialMidiaFooter .ItemMidia span:first-child {
+        width: 40px
+    }
+
+    .Menu .ItemMenu span {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 40%;
+    }
+
+    .Menu .ItemMenu span:first-child {
+        width: 40px
+    }
+
+}
